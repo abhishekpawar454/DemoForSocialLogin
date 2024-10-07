@@ -1,0 +1,179 @@
+.action-icons-box {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}
+.action-icons-box .action-icons {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: rgb(22, 60, 104);
+}
+.inner-container,
+.inner-container-add {
+  background-color: rgb(224, 238, 255);
+  padding: 2rem 1.5rem 0rem 1.5rem;
+  margin: 1.5rem;
+  border-radius: 5px;
+  color: black;
+}
+.inner-container-add {
+  height: 78vh;
+  overflow-y: scroll;
+  padding: 1rem 2rem 0rem 2rem;
+}
+.table-container th {
+  background-color: rgb(22, 70, 124);
+  color: white;
+  font-weight: bold;
+}
+.table-container tr th {
+  padding: 0.8rem;
+}
+.table-container tr td {
+  padding: 0.6rem 0.8rem;
+}
+.table-container .table-even-row {
+  background-color: rgb(185, 208, 236);
+}
+.table-container .table-odd-row {
+  background-color: rgb(205, 221, 238);
+}
+.table-container .table-even-row:hover {
+  background-color: rgb(177, 198, 223);
+}
+.table-container .table-odd-row:hover {
+  background-color: rgb(188, 203, 221);
+}
+.inner-container .table-heading,
+.inner-container-add .table-heading {
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin-left: 0.2rem;
+  color: #092341;
+}
+.inner-container .table-heading-add,
+.inner-container-add .table-heading-add {
+  font-size: 1.45rem;
+  font-weight: 600;
+  font-family: "Poppins-Regular";
+  color: #092341;
+}
+.inner-container .upper-container,
+.inner-container-add .upper-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.2rem 1.5rem 0.2rem;
+  align-items: center;
+}
+.inner-container-add .upper-container {
+  padding: 0 0.2rem 0.5rem 0.2rem;
+}
+.upper-container .search-add-box,
+.upper-container .back-button-box {
+  display: flex;
+  gap: 1rem;
+}
+.search-add-box .css-1gj9aim-MuiButtonBase-root-MuiButton-root {
+  background-color: rgb(22, 70, 124);
+  text-transform: capitalize;
+  padding: 0 1rem;
+}
+.button-box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 0.5rem 1.5rem 1rem;
+}
+.button-box .css-1gj9aim-MuiButtonBase-root-MuiButton-root {
+  background-color: rgb(22, 70, 124);
+  text-transform: capitalize;
+  padding: 0.4rem 1rem;
+}
+.search-add-box .css-2a7nsh-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-left: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+.search-add-box .css-h2lolh-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 6px 0;
+  color: rgba(0, 0, 0, 0.699);
+  width: 10rem;
+}
+.search-add-box .css-20bmp1-MuiSvgIcon-root {
+  color: rgb(22, 70, 124);
+}
+.search-add-box .css-2a7nsh-MuiInputBase-root-MuiOutlinedInput-root {
+  border: 1px solid rgba(22, 70, 124, 0.795);
+}
+.search-add-box .MuiOutlinedInput-notchedOutline {
+  border-color: transparent;
+  border-width: 0px;
+}
+.search-add-box
+  .css-2a7nsh-MuiInputBase-root-MuiOutlinedInput-root:hover
+  .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.search-add-box
+  .css-2a7nsh-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.table-pagination {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.card-title-main .card-title {
+  font-size: 1.2rem;
+  font-family: "Poppins-Regular";
+}
+
+.grid-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2rem;
+  grid-auto-rows: auto;
+}
+@media (max-width: 800px) {
+  .grid-main {
+    grid-template-columns: 1fr;
+  }
+}
+.grid-main > :first-child {
+  grid-column: 1 / -1;
+}
+.required-sign {
+  color: #eb2d2d;
+}
+
+.grid-column .admin-error-text {
+  color: #d41a1ad2;
+  font-size: 12px;
+  margin: 0;
+}
+.grid-column .admin-form-lable {
+  font-size: 15px;
+  line-height: 15px;
+  margin: 0px 0px 6px;
+  color: black;
+  font-family: "Poppins-Regular";
+}
+.admin-dropdown-box .admin-form-control {
+  width: 100%;
+  position: relative;
+}
+.profile-image {
+  width: 6rem;
+  height: 6rem;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

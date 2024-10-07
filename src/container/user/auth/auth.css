@@ -1,0 +1,61 @@
+.login-container-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1699891730676-037bed3c1bed?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D");
+}
+
+.login-button-user {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-button-user .css-1gj9aim-MuiButtonBase-root-MuiButton-root {
+  text-transform: capitalize;
+  background-color: rgb(22, 92, 77);
+  padding: 0.4rem 2.5rem;
+}
+
+.login-button-user .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+}
+
+.login-icons-user {
+  color: rgb(20, 70, 59);
+}
+
+.login-textfield-box .error-message,
+.login-textfields .error-message {
+  color: rgb(192, 20, 20);
+  font-size: 12px;
+  margin-top: 0.1rem;
+}
+
+.login-textfield-box {
+  width: 100%;
+}
+.button-box-signup {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.button-box-signup .sign-icons {
+  background-color: rgb(255, 255, 255);
+  color: rgb(20, 70, 59);
+  font-size: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+}

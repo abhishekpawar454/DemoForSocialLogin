@@ -1,0 +1,167 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20231231/pngtree-elegant-black-design-with-smooth-curved-blue-shapes-and-subtle-mesh-image_13903541.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login-form {
+  backdrop-filter: blur(500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  width: 20rem;
+  transition: box-shadow 0.4s ease;
+}
+.login-form:hover {
+  backdrop-filter: blur(500px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+  border: 2px solid white;
+  border-radius: 25px;
+  width: 20rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.login-image {
+  height: 7rem;
+  width: 7rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  outline: none;
+}
+
+.login-image img {
+  max-height: 108%;
+  max-width: 108%;
+  object-fit: contain;
+}
+.login-textfields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.login-textfields-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  height: calc(100vh - 395px);
+  overflow: auto;
+  padding: 0.2rem 0.2rem;
+}
+.login-textfield {
+  width: 100%;
+}
+.login-textbox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-checkbox .css-1y5vrnu-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+  color: rgb(255, 255, 255);
+}
+.login-checkbox .css-1edfpdg-MuiTypography-root {
+  letter-spacing: 0;
+  font-size: 0.8rem;
+}
+.login-checkbox .css-20bmp1-MuiSvgIcon-root {
+  font-size: 1.1rem;
+  color: white;
+}
+.login-textbox .forgot-text {
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.login-textfield {
+  background-color: white;
+  border-radius: 5px;
+}
+.login-textfield .Mui-focused .MuiOutlinedInput-notchedOutline,
+.login-textfield .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.login-icons {
+  color: rgb(24, 46, 107);
+}
+.login-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.2rem;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.login-button .css-1gj9aim-MuiButtonBase-root-MuiButton-root {
+  text-transform: capitalize;
+  background-color: rgb(29, 60, 145);
+  padding: 0.4rem 2.5rem;
+}
+.login-button .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+}
+.eye-icon {
+  cursor: pointer;
+}
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.login-textfields .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  border: 1px solid white;
+  color: white;
+  padding: 0;
+  height: 3rem;
+  width: 3rem;
+}
+
+.login-textfields .Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+.login-form .lower-text {
+  font-size: 13px;
+}
+.lower-text .forgot-text {
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.login-textfields-signup::-webkit-scrollbar {
+  width: 5px;
+}
+.login-textfields-signup::-webkit-scrollbar-thumb {
+  background-color: rgb(19, 97, 61);
+}
+.login-textfields-signup::-webkit-scrollbar-track {
+  background-color: #505050;
+}
