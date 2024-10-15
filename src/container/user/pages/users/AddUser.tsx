@@ -3,11 +3,21 @@ import Index from "../../../Index";
 import "./UserList.css";
 import PageIndex from "../../../PageIndex";
 
+interface addUserInterface {
+  name: string;
+  email: string;
+  mobileNumber: string;
+  password: string;
+  confirmPassword: string;
+  role: string;
+  profile: string;
+}
+
 const AddUser = () => {
   const navigate = Index.useNavigate();
   const [showPassword, setShowPassword] = Index.useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = Index.useState(false);
-  // const [image, setImage] = Index.useState("");
+  const [image, setImage] = Index.useState<Blob | MediaSource | null>(null);
 
   const handleClickShowPassword = () =>
     setShowPassword((show: boolean) => !show);
@@ -24,18 +34,9 @@ const AddUser = () => {
     profile: "",
   };
 
-  const handleFormSubmit = async () => {};
-
-  //   const getAllUserApi = async () => {
-  //     const res = await PageIndex.getAllUser();
-  //     if (res?.status == 200) {
-  //       setUserData(res?.data?.userData);
-  //     }
-  //   };
-
-  //   Index.useEffect(() => {
-  //     getAllUserApi();
-  //   }, []);
+  const handleFormSubmit = async (values: addUserInterface) => {
+    console.log(values, "11111111111111111");
+  };
 
   return (
     <Index.Box className="main-container">
@@ -70,62 +71,60 @@ const AddUser = () => {
                           <span className="required-sign">*</span>
                         </Index.FormHelperText>
 
-                        <Index.Box>
+                        <Index.Box className="profile-box">
+                          <label className="edit-button-box" htmlFor="file">
+                            <Index.EditIcon className="edit-icon" />
+                          </label>
                           <Index.Box className="profile-image">
-                            {/* {!errors?.profile &&
-                            (image || editData?.profile) ? ( */}
-                            <img
-                              src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=800"
-                              // src={
-                              //   image
-                              //     ? URL.createObjectURL(image)
-                              //     : editData?.profile
-                              //       ? `${process.env.REACT_APP_IMAGE_URL}${editData?.profile}`
-                              //       : ""
-                              // }
-                              // onError={(e) => {
-                              //   e.target.src = PageIndex.Svg.avtarIcon;
-                              // }}
-                              alt=""
-                            />
-                            {/* ) : (
+                            {!errors?.profile && image ? (
+                              // || editData?.profile
+                              <img
+                                // src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=800"
+                                alt=""
+                                src={image ? URL.createObjectURL(image) : ""}
+                                // src={
+                                //   image
+                                //     ? URL.createObjectURL(image)
+                                //     : editData?.profile
+                                //       ? `${process.env.REACT_APP_IMAGE_URL}${editData?.profile}`
+                                //       : ""
+                                // }
+                                // onError={(e) => {
+                                //   e.target.src = PageIndex.Svg.avtarIcon;
+                                // }}
+                              />
+                            ) : (
                               <img
                                 className="admin-upload-profile-img"
-                                src={PageIndex.Svg.avtarIcon}
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfMHDSq8_e_WtAnFvceteqvP7p_1hqyt3b2A&s"
                                 alt=""
                               />
-                            )} */}
-                            <Index.Button variant="contained" component="label">
-                              <img
-                                // src={Index.EditIcon}
-                                className="admin-upload-icon"
-                                alt="upload img"
-                              ></img>
-                              <input
-                                type="file"
-                                name="profile"
-                                accept=".jpeg, .jpg, .png"
-                                className="upload-image-input"
-                                onBlur={handleBlur}
-                                onChange={(e) => {
-                                  try {
-                                    if (
-                                      e.currentTarget.files &&
+                            )}
+
+                            <input
+                              type="file"
+                              name="profile"
+                              accept=".jpeg, .jpg, .png"
+                              onBlur={handleBlur}
+                              id="file"
+                              onChange={(e) => {
+                                try {
+                                  if (
+                                    e.currentTarget.files &&
+                                    e.currentTarget.files[0]
+                                  ) {
+                                    setFieldValue(
+                                      "profile",
                                       e.currentTarget.files[0]
-                                    ) {
-                                      setFieldValue(
-                                        "profile",
-                                        e.currentTarget.files[0]
-                                      );
-                                      // setImage(e.currentTarget.files[0]);
-                                    }
-                                  } catch (error) {
-                                    // e.currentTarget.value = null;
+                                    );
+                                    setImage(e.currentTarget.files[0]);
                                   }
-                                }}
-                                hidden
-                              />
-                            </Index.Button>
+                                } catch (error) {
+                                  e.currentTarget.value = "";
+                                }
+                              }}
+                              hidden
+                            />
                           </Index.Box>
                           <Index.FormHelperText className="admin-error-text">
                             {touched?.profile &&
@@ -308,7 +307,7 @@ const AddUser = () => {
 
                     <Index.Box className="grid-column">
                       <Index.FormHelperText className="admin-form-lable">
-                        Confirm password
+                        Confirm Password
                         <span className="required-sign">*</span>
                       </Index.FormHelperText>
 

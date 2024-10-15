@@ -37,6 +37,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
 import GoogleIcon from "@mui/icons-material/Google";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import { MuiOtpInput } from "mui-one-time-password-input";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
@@ -90,6 +91,7 @@ export default {
   SearchIcon,
   GoogleIcon,
   TwitterIcon,
+  FacebookIcon,
 
   MuiOtpInput,
   toast,

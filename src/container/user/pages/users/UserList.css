@@ -169,6 +169,7 @@
   height: 6rem;
   overflow: hidden;
   border-radius: 50%;
+  position: relative;
 }
 
 .profile-image img {
@@ -176,4 +177,23 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.edit-button-box {
+  background-color: rgb(27, 82, 185);
+  position: absolute;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 69px;
+  cursor: pointer;
+  z-index: 999;
+}
+.edit-button-box .edit-icon {
+  font-size: 15px;
+}
+.profile-box {
+  position: relative;
 }
