@@ -6,7 +6,6 @@ const HomePage = () => {
   const navigate = Index.useNavigate();
   const user = localStorage.getItem("user");
   const userInfo = user ? JSON.parse(user) : null;
-  console.log(userInfo);
 
   const logoutHandler = () => {
     const auth = getAuth();

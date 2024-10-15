@@ -2,6 +2,7 @@ import { auth } from "../../../config/Firebase";
 import Index from "../../Index";
 import PageIndex from "../../PageIndex";
 import {
+  FacebookAuthProvider,
   GoogleAuthProvider,
   signInWithPopup,
   TwitterAuthProvider,
@@ -72,7 +73,7 @@ const UserSignUp = () => {
         const accessToken = credential?.accessToken as string;
         localStorage.setItem("token", accessToken);
         const userData = result.user.providerData;
-        console.log(userData);
+        console.log(userData, 1111111111);
         if (localStorage.getItem("token")) {
           const formData: userFormInterfaceForSocial = {
             name: userData[0].displayName,
@@ -111,10 +112,49 @@ const UserSignUp = () => {
         const userData = result.user.providerData;
         localStorage.setItem("token", accessToken);
         localStorage.setItem("user", JSON.stringify(userData));
-        console.log(accessToken, userData);
+        console.log(userData, 1111111111);
         if (localStorage.getItem("token")) {
           Index.toast.success("User logged in through social site");
           navigate("/home");
+        }
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  };
+
+  const handleLoginFacebook = async (): Promise<void> => {
+    const facebookProvider = new FacebookAuthProvider();
+    facebookProvider.setCustomParameters({
+      prompt: "select_account",
+    });
+    signInWithPopup(auth, facebookProvider)
+      .then((result) => {
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential?.accessToken as string;
+        const userData = result.user.providerData;
+        localStorage.setItem("token", accessToken);
+        localStorage.setItem("user", JSON.stringify(userData));
+        console.log(userData, 1111111111);
+        if (localStorage.getItem("token")) {
+          const formData: userFormInterfaceForSocial = {
+            name: userData[0].displayName,
+            email: userData[0].email,
+            mobile: userData[0]?.phoneNumber,
+            role: "User",
+            type: "Social",
+          };
+          PageIndex.userSocialSignup(formData)
+            .then((res) => {
+              if (res?.status === 201 || res?.status === 200) {
+                Index.toast.success(res?.data?.message);
+                localStorage.setItem("user", JSON.stringify(res?.data?.data));
+                navigate("/home");
+              }
+            })
+            .catch((e) => {
+              console.log(e);
+            });
         }
       })
       .catch((e) => {
@@ -333,6 +373,12 @@ const UserSignUp = () => {
                   <Index.TwitterIcon
                     onClick={() => {
                       handleLoginTwitter();
+                    }}
+                    className="sign-icons"
+                  />
+                  <Index.FacebookIcon
+                    onClick={() => {
+                      handleLoginFacebook();
                     }}
                     className="sign-icons"
                   />
